@@ -99,7 +99,7 @@ def interest(principal, rate, periods):
     '''
     # Replace `pass` with your code. 
     # Stay within the function. Only use the parameters as input. The function should return your answer.
-    return round((principal*((1+rate)*periods)))
+    return round((principal*rate*periods)+principal)
 
 def body_mass_index(weight, height):
     '''Body Mass Index.
