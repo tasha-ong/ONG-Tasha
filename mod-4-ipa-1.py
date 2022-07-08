@@ -131,19 +131,19 @@ def eta(first_stop, second_stop, route_map):
     '''
     # Replace `pass` with your code. 
     # Stay within the function. Only use the parameters as input. The function should return your answer.
-    if (first_stop, second_stop) in legs: 
-        return legs[first_stop, second_stop]["travel_time_mins"]
+    if (first_stop, second_stop) in route_map: 
+        return route_map[first_stop, second_stop]["travel_time_mins"]
     
     # if the stops overlap, need to proceed to next, get total time 
     time = 0
-    initial = [stop[0] for stop in legs]
-    second = [stop[1] for stop in legs]
+    initial = [stop[0] for stop in route_map]
+    second = [stop[1] for stop in route_map]
     i = initial.index(first_stop)
     
     while True:
-        while i >= len(legs):
-            i = i - len(legs)
-        time = time + legs[initial[i],second[i]]["travel_time_mins"]
+        while i >= len(route_map):
+            i = i - len(route_map)
+        time = time + route_map[initial[i],second[i]]["travel_time_mins"]
         if second[i] == second_stop:
                 return time 
         i = i + 1
